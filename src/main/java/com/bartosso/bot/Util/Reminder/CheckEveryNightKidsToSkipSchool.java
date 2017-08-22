@@ -36,7 +36,7 @@ public class CheckEveryNightKidsToSkipSchool extends TimerTask {
         if (todaySickLeaves != null) {
             todaySickLeaves.forEach(this::removeSickKidsFromBus);
         }}
-        reminder.setCheckEveryNightDb(localDate.plusDays(1).atTime(23,45));
+        reminder.setCheckEveryNightDb(localDate.plusDays(1).atTime(0,5));
     }
 
     private void removeSickKidsFromBus(SickLeave sickLeave){

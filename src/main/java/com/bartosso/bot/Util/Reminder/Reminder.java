@@ -17,7 +17,7 @@ public class Reminder {
 
 
     public Reminder() {
-        setCheckEveryNightDb(LocalDate.now().atTime(23,45,0));
+        setCheckEveryNightDb(LocalDate.now().atTime(0,5,0));
     }
 
     void setCheckEveryNightDb(LocalDateTime lDT) {
