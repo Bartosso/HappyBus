@@ -2,6 +2,7 @@ package com.bartosso.bot.command.impl.ParentsMenu;
 
 import com.bartosso.bot.Bot;
 import com.bartosso.bot.command.Command;
+import lombok.extern.slf4j.Slf4j;
 import org.telegram.telegrambots.api.methods.send.SendContact;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.objects.Contact;
@@ -10,10 +11,11 @@ import org.telegram.telegrambots.exceptions.TelegramApiException;
 
 import java.sql.SQLException;
 
-
+@Slf4j
 public class RequestCallCommand extends Command {
     private boolean expectNewValue;
     private String  lastName;
+    @SuppressWarnings("Duplicates")
     @Override
     public boolean execute(Update update, Bot bot) throws SQLException, TelegramApiException {
         if (update.getMessage().hasText()){
@@ -25,9 +27,13 @@ public class RequestCallCommand extends Command {
         if (expectNewValue){
             if (update.getMessage().getContact()!=null){
                 Contact contact = update.getMessage().getContact();
-                bot.execute(new SendContact().setFirstName(contact.getFirstName()).setLastName(
-                        contact.getLastName()).setPhoneNumber(contact.getPhoneNumber()).setChatId(factory.getManagerDao().getManagerChatId()));
-                } else {
+                try {
+                    bot.execute(new SendContact().setFirstName(contact.getFirstName()).setLastName(
+                            contact.getLastName()).setPhoneNumber(contact.getPhoneNumber()).setChatId(factory.getManagerDao().getManagerChatId()));
+                } catch (org.springframework.dao.EmptyResultDataAccessException e){
+                log.info("Пользователь пытался запросить обратный звонок но менеджер не указан");
+                }
+            } else {
                 try {
                     String phoneNumber = update.getMessage().getText();
                     String firstName   = update.getMessage().getFrom().getFirstName();
@@ -35,8 +41,17 @@ public class RequestCallCommand extends Command {
                     lastName = update.getMessage().getFrom().getLastName();
                 }
                 SendContact sendContact = new SendContact().setFirstName(firstName).setLastName(lastName).setPhoneNumber(phoneNumber);
-                bot.execute(new SendMessage(factory.getManagerDao().getManagerChatId(),messageDao.getMessage(81).getSendMessage().getText()));
-                bot.execute(sendContact.setChatId(factory.getManagerDao().getManagerChatId()));} catch (TelegramApiException e){
+                long managerChatId;
+                try {
+                    managerChatId = factory.getManagerDao().getManagerChatId();
+                } catch (org.springframework.dao.EmptyResultDataAccessException e){
+                    log.info("Пользователь пытался запросить обратный звонок но менеджер не указан");
+                    sendMessageByIdWithKeyboard(bot,20,3);
+                    return false;
+                }
+                bot.execute(sendContact.setChatId(managerChatId));
+                bot.execute(new SendMessage(managerChatId,messageDao.getMessage(81).getSendMessage().getText()));
+                } catch (TelegramApiException e){
                    sendErrorMessageForFormat(bot);
                    return false;
                 }

@@ -70,6 +70,10 @@ public class FeedbackCommand extends Command {
         }
          if (update.hasMessage()){
              chatId = update.getMessage().getChatId();
+             if (!factory.getParentDao().isRegistred(chatId)) {
+                 sendMessageByIdWithKeyboard(bot,68,3);
+                 return false;
+             }
          }
          if (step == 0){
          sendMessageById(bot,11);

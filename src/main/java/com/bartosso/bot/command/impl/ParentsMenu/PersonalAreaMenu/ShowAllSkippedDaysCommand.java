@@ -22,6 +22,9 @@ public class ShowAllSkippedDaysCommand extends AbstractShowAndRemoveCommand {
     @Override
     protected List<Entity> getEntitiesToShow() {
         thisParent = factory.getParentDao().getParentByChatId(chatId);
+        if (thisParent == null) {
+            return null;
+        }
         List<SickLeave> sickLeaves = factory.getSickLeaveDao().getListOfSickLeavesByChildId(thisParent.getChildId());
         if (sickLeaves != null) {
             thisBus = factory.getBusesDao().getBusById(sickLeaves.get(0).getBusId());

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="15e7bde6-64c1-4e98-9ef4-80666ffc2579" name="Default" comment="" />
+    <list default="true" id="15e7bde6-64c1-4e98-9ef4-80666ffc2579" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -57,6 +59,57 @@
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
               <filtering enabled="true" />
+              <column-attributes>
+                <column name="ctid" enabled="false" />
+              </column-attributes>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RequestCallCommand.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/bartosso/bot/command/impl/ParentsMenu/RequestCallCommand.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="389">
+              <caret line="53" column="49" lean-forward="false" selection-start-line="53" selection-start-column="49" selection-end-line="53" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="manager" pinned="false" current-in-tab="false">
+        <entry file="das://table:/fc372e84/1cd955e4-19fd-4891-8930-69eaae18b6cf/test.public.manager">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShowMainAdminMenuCommand.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/bartosso/bot/command/impl/AdminMenu/ShowMainAdminMenuCommand.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="329">
+              <caret line="67" column="17" lean-forward="false" selection-start-line="67" selection-start-column="17" selection-end-line="67" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="59" lean-forward="false" selection-start-line="0" selection-start-column="59" selection-end-line="0" selection-end-column="59" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="keyboard" pinned="false" current-in-tab="false">
+        <entry file="das://table:/fc372e84/1cd955e4-19fd-4891-8930-69eaae18b6cf/test.public.keyboard">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -70,15 +123,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Reminder.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bartosso/bot/Util/Reminder/Reminder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="19" column="55" lean-forward="false" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
-              <folding>
-                <element signature="e#338#339#0" expanded="true" />
-                <element signature="e#405#406#0" expanded="true" />
-              </folding>
+      <file leaf-file-name="message" pinned="false" current-in-tab="false">
+        <entry file="das://table:/fc372e84/1cd955e4-19fd-4891-8930-69eaae18b6cf/test.public.message">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -86,75 +135,13 @@
       <file leaf-file-name="Bot.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/bartosso/bot/Bot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="78" column="16" lean-forward="false" selection-start-line="78" selection-start-column="16" selection-end-line="78" selection-end-column="16" />
+            <state relative-caret-position="692">
+              <caret line="80" column="0" lean-forward="false" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
               <folding>
-                <element signature="e#2397#2398#0" expanded="true" />
-                <element signature="e#2422#2423#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#2435#2436#0" expanded="true" />
+                <element signature="e#2460#2461#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="55" lean-forward="false" selection-start-line="4" selection-start-column="55" selection-end-line="4" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CheckEveryNightKidsToSkipSchool.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bartosso/bot/Util/Reminder/CheckEveryNightKidsToSkipSchool.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="39" column="5" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Kid.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bartosso/bot/entity/ProjectEntities/Kid.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Command.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bartosso/bot/command/Command.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="714">
-              <caret line="61" column="98" lean-forward="false" selection-start-line="61" selection-start-column="98" selection-end-line="61" selection-end-column="98" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SelectBusCommand.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bartosso/bot/command/impl/CoordinatorMenu/ToSchool/ShowListsThings/SelectBusCommand.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1105">
-              <caret line="77" column="4" lean-forward="false" selection-start-line="77" selection-start-column="4" selection-end-line="77" selection-end-column="4" />
-              <folding>
-                <element signature="e#2990#2991#0" expanded="true" />
-                <element signature="e#3083#3084#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CustomKeyboardUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bartosso/bot/Util/CustomKeyboardUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="11220">
-              <caret line="674" column="33" lean-forward="false" selection-start-line="674" selection-start-column="33" selection-end-line="674" selection-end-column="33" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -208,7 +195,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/bartosso/bot/command/impl/CoordinatorMenu/ToSchool/ShowListsThings/RemoveKidFromMorningBusCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bartosso/bot/command/impl/AdminMenu/SchoolsMenu/RemoveSchoolCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bartosso/bot/command/impl/AdminMenu/BusesMenu/ShowAndRemoveBusCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bartosso/bot/command/impl/ParentsMenu/PersonalAreaMenu/ShowAllSkippedDaysCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bartosso/bot/command/impl/ParentsMenu/PersonalAreaMenu/SkipSchoolCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bartosso/BotApplication.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bartosso/bot/command/impl/ParentsMenu/ShowMainMenuCommand.java" />
@@ -221,11 +207,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/bartosso/bot/command/CommandType.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bartosso/bot/command/CommandFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bartosso/bot/command/impl/AdminMenu/INFOMenu/ShowINFOMenuCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bartosso/bot/command/impl/ParentsMenu/PersonalAreaMenu/FeedbackCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bartosso/bot/dao/impl/ManagerDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bartosso/bot/command/impl/ParentsMenu/RequestCallCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bartosso/bot/dao/impl/AdminDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bartosso/bot/command/impl/AdminMenu/ShowMainAdminMenuCommand.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/1cd955e4-19fd-4891-8930-69eaae18b6cf/console.sql" />
         <option value="$PROJECT_DIR$/src/main/java/com/bartosso/bot/dao/DaoFactory.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
@@ -237,10 +220,14 @@
         <option value="$PROJECT_DIR$/src/main/java/com/bartosso/bot/command/impl/CoordinatorMenu/ToSchool/ShowListsThings/SelectBusCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bartosso/bot/Util/CustomKeyboardUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bartosso/bot/command/Command.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/bartosso/bot/Util/Reminder/Reminder.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bartosso/bot/Util/Reminder/CheckEveryNightKidsToSkipSchool.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bartosso/bot/command/impl/ParentsMenu/PersonalAreaMenu/ShowAllSkippedDaysCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bartosso/bot/command/impl/ParentsMenu/PersonalAreaMenu/FeedbackCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bartosso/bot/command/impl/AdminMenu/ShowMainAdminMenuCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/bartosso/bot/Bot.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bartosso/bot/command/impl/ParentsMenu/RequestCallCommand.java" />
       </list>
     </option>
   </component>
@@ -291,6 +278,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -298,12 +286,86 @@
               <item name="bot" type="b2602c69:ProjectViewProjectNode" />
               <item name="bot" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="bot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="bartosso" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="bartosso" type="462c0819:PsiDirectoryNode" />
+              <item name="bot" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="bartosso" type="462c0819:PsiDirectoryNode" />
+              <item name="bot" type="462c0819:PsiDirectoryNode" />
+              <item name="command" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="bartosso" type="462c0819:PsiDirectoryNode" />
+              <item name="bot" type="462c0819:PsiDirectoryNode" />
+              <item name="command" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="bartosso" type="462c0819:PsiDirectoryNode" />
+              <item name="bot" type="462c0819:PsiDirectoryNode" />
+              <item name="command" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+              <item name="AdminMenu" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -476,7 +538,8 @@
       <workItem from="1503024864124" duration="29617000" />
       <workItem from="1503282458109" duration="32244000" />
       <workItem from="1503318878555" duration="953000" />
-      <workItem from="1503368562915" duration="785000" />
+      <workItem from="1503368562915" duration="1489000" />
+      <workItem from="1503379154548" duration="7695000" />
     </task>
     <task id="LOCAL-00001" summary="New experimental version of menu scenario">
       <created>1501848529334</created>
@@ -499,14 +562,29 @@
       <option name="project" value="LOCAL" />
       <updated>1503372979390</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="some kind of fix for request call and for sending questions etc">
+      <created>1503398404806</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1503398404806</updated>
+    </task>
+    <task id="LOCAL-00005" summary="clean">
+      <created>1503398476595</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1503398476595</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="352800000" />
+    <option name="totallyTimeSpent" value="361199000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -523,7 +601,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24110033" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24514563" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24676375" sideWeight="0.49380532" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -531,7 +609,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3135392" sideWeight="0.4935275" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3135392" sideWeight="0.4935275" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -553,11 +631,13 @@
     <MESSAGE value="New experimental version of menu scenario" />
     <MESSAGE value="New experimental version of menu scenario and new bot at least :)" />
     <MESSAGE value="hotfix for reminder" />
-    <option name="LAST_COMMIT_MESSAGE" value="hotfix for reminder" />
+    <MESSAGE value="some kind of fix for request call and for sending questions etc" />
+    <MESSAGE value="clean" />
+    <option name="LAST_COMMIT_MESSAGE" value="clean" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="397" />
+      <option name="time" value="413" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="SpringBootApplicationConfigurationType">
@@ -570,20 +650,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bartosso/bot/command/impl/CoordinatorMenu/ToHome/PutInBusThings/SelectBusForSelectKidCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bartosso/bot/command/impl/CoordinatorMenu/ToHome/PutInBusThings/SelectKidForPutInBus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="28" column="34" lean-forward="false" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bartosso/bot/command/impl/ParentsMenu/PersonalAreaMenu/WhereIsBusCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
@@ -633,38 +699,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bartosso/bot/command/impl/ParentsMenu/PersonalAreaMenu/FeedbackCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="86" column="122" lean-forward="false" selection-start-line="86" selection-start-column="122" selection-end-line="86" selection-end-column="122" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bartosso/bot/dao/impl/ManagerDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bartosso/bot/command/impl/ParentsMenu/RequestCallCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="50" column="13" lean-forward="true" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bartosso/bot/dao/impl/AdminDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="19" column="74" lean-forward="false" selection-start-line="19" selection-start-column="74" selection-end-line="19" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bartosso/bot/command/impl/AdminMenu/ShowMainAdminMenuCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="20" column="51" lean-forward="false" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="51" />
         </state>
       </provider>
     </entry>
@@ -707,7 +745,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
           <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -734,41 +771,6 @@
       </provider>
     </entry>
     <entry file="das://table:/fc372e84/1cd955e4-19fd-4891-8930-69eaae18b6cf/test.public.schools">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/fc372e84/1cd955e4-19fd-4891-8930-69eaae18b6cf/test.public.parents">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/fc372e84/1cd955e4-19fd-4891-8930-69eaae18b6cf/test.public.message">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/fc372e84/1cd955e4-19fd-4891-8930-69eaae18b6cf/test.public.manager">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/fc372e84/1cd955e4-19fd-4891-8930-69eaae18b6cf/test.public.kids">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/fc372e84/1cd955e4-19fd-4891-8930-69eaae18b6cf/test.public.keyboard">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
@@ -815,13 +817,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <marker date="1503317745479" expanded="true" signature="512:599" ph="INSERT INTO sick_leave... " />
-            <marker date="1503317745479" expanded="true" signature="834:877" ph="SELECT * FRO... sick_leave" />
-            <marker date="1503317745479" expanded="true" signature="1085:1109" ph="SELECT * FRO... sick_leave" />
-            <marker date="1503317745479" expanded="true" signature="1305:1342" ph="SELECT * FRO... sick_leave" />
-            <marker date="1503317745479" expanded="true" signature="1460:1493" ph="DELETE FROM " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -829,14 +824,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="2" selection-end-line="25" selection-end-column="7" />
-          <folding>
-            <marker date="1503317745189" expanded="true" signature="518:575" ph="INSERT INTO coordinators... " />
-            <marker date="1503317745189" expanded="true" signature="791:833" ph="SELECT * FRO... coordinators" />
-            <marker date="1503317745189" expanded="true" signature="1000:1052" ph="select exist... " />
-            <marker date="1503317745189" expanded="true" signature="1014:1051" ph="select * fro... coordinators" />
-            <marker date="1503317745189" expanded="true" signature="1174:1200" ph="SELECT * FRO... coordinators" />
-            <marker date="1503317745189" expanded="true" signature="1377:1412" ph="DELETE FROM " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -844,10 +831,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <marker date="1503317745237" expanded="true" signature="724:764" ph="SELECT * FRO... BUTTON" />
-            <marker date="1503317745237" expanded="true" signature="1069:1102" ph="SELECT text BUTTON" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -855,7 +838,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2397">
           <caret line="157" column="4" lean-forward="false" selection-start-line="157" selection-start-column="4" selection-end-line="157" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -872,8 +854,8 @@
         <state relative-caret-position="1105">
           <caret line="77" column="4" lean-forward="false" selection-start-line="77" selection-start-column="4" selection-end-line="77" selection-end-column="4" />
           <folding>
-            <element signature="e#2990#2991#0" expanded="true" />
-            <element signature="e#3083#3084#0" expanded="true" />
+            <element signature="e#2990#2991#0" expanded="false" />
+            <element signature="e#3083#3084#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -886,18 +868,109 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bartosso/bot/command/Command.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bartosso/bot/entity/ProjectEntities/Kid.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="61" column="98" lean-forward="false" selection-start-line="61" selection-start-column="98" selection-end-line="61" selection-end-column="98" />
+        <state relative-caret-position="136">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/fc372e84/1cd955e4-19fd-4891-8930-69eaae18b6cf/test.public.admin">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bartosso/bot/entity/ProjectEntities/KidsInterface.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bartosso/bot/Util/Reminder/Reminder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="19" column="55" lean-forward="false" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
+          <folding>
+            <element signature="e#338#339#0" expanded="false" />
+            <element signature="e#405#406#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bartosso/bot/Util/Reminder/CheckEveryNightKidsToSkipSchool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="39" column="5" lean-forward="false" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bartosso/bot/command/Command.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="69" column="5" lean-forward="false" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/fc372e84/1cd955e4-19fd-4891-8930-69eaae18b6cf/test.public.parents">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/fc372e84/1cd955e4-19fd-4891-8930-69eaae18b6cf/test.public.kids">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bartosso/bot/command/impl/AdminMenu/AbstractShowAndRemoveCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="115" column="32" lean-forward="false" selection-start-line="115" selection-start-column="32" selection-end-line="115" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bartosso/bot/dao/impl/ManagerDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="e#653#654#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/fc372e84/1cd955e4-19fd-4891-8930-69eaae18b6cf/test.public.keyboard">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bartosso/bot/command/impl/AdminMenu/ShowMainAdminMenuCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="67" column="17" lean-forward="false" selection-start-line="67" selection-start-column="17" selection-end-line="67" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/fc372e84/1cd955e4-19fd-4891-8930-69eaae18b6cf/test.public.message">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bartosso/bot/command/impl/ParentsMenu/PersonalAreaMenu/FeedbackCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="74" column="30" lean-forward="false" selection-start-line="74" selection-start-column="30" selection-end-line="74" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bartosso/bot/command/impl/ParentsMenu/PersonalAreaMenu/ShowAllSkippedDaysCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="20" column="32" lean-forward="false" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -908,56 +981,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="das://table:/fc372e84/1cd955e4-19fd-4891-8930-69eaae18b6cf/test.public.manager">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/fc372e84/1cd955e4-19fd-4891-8930-69eaae18b6cf/test.public.admin">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+          <column-attributes>
+            <column name="ctid" enabled="false" />
+          </column-attributes>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="55" lean-forward="false" selection-start-line="4" selection-start-column="55" selection-end-line="4" selection-end-column="55" />
+        <state relative-caret-position="0">
+          <caret line="0" column="59" lean-forward="false" selection-start-line="0" selection-start-column="59" selection-end-line="0" selection-end-column="59" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bartosso/bot/entity/ProjectEntities/Kid.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bartosso/bot/command/impl/ParentsMenu/RequestCallCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bartosso/bot/entity/ProjectEntities/KidsInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bartosso/bot/Util/Reminder/Reminder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="19" column="55" lean-forward="false" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
-          <folding>
-            <element signature="e#338#339#0" expanded="true" />
-            <element signature="e#405#406#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bartosso/bot/Util/Reminder/CheckEveryNightKidsToSkipSchool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="39" column="5" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+        <state relative-caret-position="389">
+          <caret line="53" column="49" lean-forward="false" selection-start-line="53" selection-start-column="49" selection-end-line="53" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bartosso/bot/Bot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="78" column="16" lean-forward="false" selection-start-line="78" selection-start-column="16" selection-end-line="78" selection-end-column="16" />
+        <state relative-caret-position="692">
+          <caret line="80" column="0" lean-forward="false" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
           <folding>
-            <element signature="e#2397#2398#0" expanded="true" />
-            <element signature="e#2422#2423#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#2435#2436#0" expanded="true" />
+            <element signature="e#2460#2461#0" expanded="true" />
           </folding>
         </state>
       </provider>
