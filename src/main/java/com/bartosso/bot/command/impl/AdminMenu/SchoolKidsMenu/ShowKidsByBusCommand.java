@@ -8,6 +8,7 @@ import com.bartosso.bot.dao.impl.KidsDao;
 import com.bartosso.bot.dao.impl.SchoolDao;
 import com.bartosso.bot.entity.ProjectEntities.Entity;
 import com.bartosso.bot.entity.ProjectEntities.Kid;
+import com.bartosso.bot.entity.ProjectEntities.School;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.methods.send.SendPhoto;
 import org.telegram.telegrambots.api.methods.updatingmessages.EditMessageReplyMarkup;
@@ -179,10 +180,20 @@ public class ShowKidsByBusCommand extends Command {
     }
 
     private void showKid(Bot bot, Kid kid) throws TelegramApiException, SQLException {
+        School school;
+        try {
+            school = factory.getSchoolDao().getSchoolById(Long.parseLong(kid.getSchool_id()));
+        } catch (org.springframework.dao.EmptyResultDataAccessException e){
+            school = null;
+        }
        StringBuilder sb = new StringBuilder();
-       sb.append("Ученик\n").append(kid.toString()).append("\nШкола\n")
-               .append(schoolDao.getSchoolById(Long.parseLong(kid.getSchool_id())).getName())
-               .append("\nРодители\n");
+       sb.append("Ученик\n").append(kid.toString()).append("\nШкола\n");
+        if (school != null) {
+            sb.append(school.getName());
+        }else {
+            sb.append("Школа удалена, выберите новую в меню редактирования ученика.");
+        }
+               sb.append("\nРодители\n");
        parentDao.getParentsByChildId(kid.getId()).forEach(parent -> sb.append(parent.toString()));
        deleteMessages(bot);
        if (kid.getPhoto()!=null){

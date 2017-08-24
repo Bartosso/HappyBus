@@ -65,13 +65,13 @@ public class DriverToHomeCommand extends RouteCommand {
                 String lon = "L" + update.getMessage().getLocation().getLongitude();
                 busesDao.updateLastGpsCords(alt + lon,thisBus.getId());
                 kids.remove(0);
+                String messageText = " Ваш ребенок вышел из автомашины:\n"+ thisBus.toString() + "\n Водитель:\n" + thisDriver.toString();
+                sendMessageToParents(bot,messageText);
                 if (kids.isEmpty()) {
                     routeIsOver(bot);
                     return false;
                 }
                 actualKid = kids.get(0);
-                String messageText = " Ваш ребенок вышел из автомашины:\n"+ thisBus.toString() + "\n Водитель:\n" + thisDriver.toString();
-                sendMessageToParents(bot,messageText);
                 deleteMessages(bot);
                 showKidWithButtons(bot);
                 return false;

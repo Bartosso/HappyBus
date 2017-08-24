@@ -137,6 +137,11 @@ public class BusesDao extends AbstractDao implements EntityDao {
         jdbcTemplate.update("UPDATE buses SET last_cordinator_id = ? WHERE id=?",lastCoordinatorId,busId);
     }
 
+    public void removeLastCoordinatorId(long busId){
+        jdbcTemplate.update("UPDATE buses SET last_cordinator_id = null WHERE id=?",busId);
+    }
+
+
     public List<Bus> getAllBusesWhoReadyToGoEveningUndGotThisCoordinatorId(long coordinator_id){
         List<Bus> a = jdbcTemplate.query("SELECT * FROM buses WHERE ready_to_home=FALSE AND buses.last_cordinator_id=? AND array_length(to_home_kids,1) > 0 ",new Object[]{coordinator_id},new BusMap());
         if (a.isEmpty()) return null;

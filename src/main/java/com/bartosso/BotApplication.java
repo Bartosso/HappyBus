@@ -5,12 +5,11 @@ import com.bartosso.bot.Util.Reminder.Reminder;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.PropertySource;
 import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.TelegramBotsApi;
 import org.telegram.telegrambots.exceptions.TelegramApiRequestException;
 
-@PropertySource("application.properties")
+
 @SpringBootApplication
 public class BotApplication implements CommandLineRunner {
 

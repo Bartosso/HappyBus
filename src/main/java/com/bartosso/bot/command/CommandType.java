@@ -54,7 +54,9 @@ public enum CommandType {
     DRIVER_TO_HOME(48),
     WHERE_IS_BUS(49),
     SHOW_ARCHIVE_SICK_LEAVES(50),
-    UPDATE_MANAGER(51);
+    UPDATE_MANAGER(51),
+    EDIT_REQUEST_CALL(52),
+    SHOW_SCHOOLS_FOR_RENAME(53);
 
 
     private final int id;

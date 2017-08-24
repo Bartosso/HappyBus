@@ -15,6 +15,7 @@ public class ShowSchoolsMenu extends AbstractMenuCommand {
             map.put(buttonDao.getButtonText(25), 24);
             map.put(buttonDao.getButtonText(26), 25);
             map.put(buttonDao.getButtonText(27), 26);
+            map.put(buttonDao.getButtonText(57), 53);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -28,6 +29,6 @@ public class ShowSchoolsMenu extends AbstractMenuCommand {
 
     @Override
     protected int getKeyboardId() {
-        return 10;
+        return 23;
     }
 }

@@ -16,6 +16,7 @@ public class RemoveSchoolCommand extends AbstractShowAndRemoveCommand {
     @Override
     protected void deleteEntityFromDb(int idToDelete) {
         factory.getSchoolDao().deleteSchool(idToDelete);
+        factory.getDriverDao().removeFromSchool(idToDelete);
     }
 
     @Override

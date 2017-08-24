@@ -4,6 +4,7 @@ import com.bartosso.bot.Bot;
 import com.bartosso.bot.Util.CustomKeyboardUtil;
 import com.bartosso.bot.command.Command;
 import com.bartosso.bot.command.impl.CoordinatorMenu.ToSchool.ShowListsThings.*;
+import com.bartosso.bot.dao.impl.BusesDao;
 import lombok.RequiredArgsConstructor;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.methods.updatingmessages.EditMessageReplyMarkup;
@@ -22,10 +23,11 @@ public class ShowKidsInEveningBusCommand extends Command {
     protected       int                        page = 0;
     private         List                       kidList;
     protected       List<InlineKeyboardMarkup> pages;
-    private boolean                    sendsList;
+    private         boolean                    sendsList;
     private         Command                    command;
     private         boolean                    runningCommand;
-    private int                        messageWithKeyboard;
+    private         int                        messageWithKeyboard;
+    private         BusesDao                   busesDao             = factory.getBusesDao();
     @SuppressWarnings("Duplicates")
     @Override
     public boolean execute(Update update, Bot bot) throws SQLException, TelegramApiException {
@@ -94,14 +96,15 @@ public class ShowKidsInEveningBusCommand extends Command {
                 return selectedSomething(update, bot);
             }
             if (chose.equals("deleteList")) {
-                factory.getBusesDao().updateEveningRoute(new Long[0],busId);
+                busesDao.updateEveningRoute(new Long[0],busId);
+                busesDao.removeLastCoordinatorId(busId);
                 deleteMessages(bot);
                 sendMessageByIdWithKeyboard(bot,20,3);
                 return false;
             }
             if (chose.equals("giveToDriver")) {
                 deleteMessages(bot);
-                long driverId = factory.getBusesDao().makeEveningRouteForBusAndGetDriverId(busId);
+                long driverId = busesDao.makeEveningRouteForBusAndGetDriverId(busId);
                 bot.execute(new SendMessage(driverId,messageDao.getMessage(61).getSendMessage().getText()));
                 sendMessageByIdWithKeyboard(bot,20,15);
                 return false;

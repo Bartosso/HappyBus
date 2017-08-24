@@ -6,17 +6,11 @@ import com.bartosso.bot.command.impl.AdminMenu.EmployeeMenu.Coordinators.AddNewC
 import com.bartosso.bot.command.impl.AdminMenu.EmployeeMenu.Coordinators.RemoveCoordinatorCommand;
 import com.bartosso.bot.command.impl.AdminMenu.EmployeeMenu.Coordinators.ShowAllCoordinatorsCommand;
 import com.bartosso.bot.command.impl.AdminMenu.EmployeeMenu.Coordinators.ShowEmployeeCoordinatorsMenuCommand;
-import com.bartosso.bot.command.impl.AdminMenu.EmployeeMenu.Drivers.AddNewDriverCommand;
-import com.bartosso.bot.command.impl.AdminMenu.EmployeeMenu.Drivers.RemoveDriverCommand;
-import com.bartosso.bot.command.impl.AdminMenu.EmployeeMenu.Drivers.ShowAllDriversCommand;
-import com.bartosso.bot.command.impl.AdminMenu.EmployeeMenu.Drivers.ShowEmployeeDriversMenuCommand;
+import com.bartosso.bot.command.impl.AdminMenu.EmployeeMenu.Drivers.*;
 import com.bartosso.bot.command.impl.AdminMenu.EmployeeMenu.ShowEmployeeMenuCommand;
 import com.bartosso.bot.command.impl.AdminMenu.INFOMenu.*;
 import com.bartosso.bot.command.impl.AdminMenu.SchoolKidsMenu.*;
-import com.bartosso.bot.command.impl.AdminMenu.SchoolsMenu.AddNewSchoolCommand;
-import com.bartosso.bot.command.impl.AdminMenu.SchoolsMenu.RemoveSchoolCommand;
-import com.bartosso.bot.command.impl.AdminMenu.SchoolsMenu.ShowAllSchoolsCommand;
-import com.bartosso.bot.command.impl.AdminMenu.SchoolsMenu.ShowSchoolsMenu;
+import com.bartosso.bot.command.impl.AdminMenu.SchoolsMenu.*;
 import com.bartosso.bot.command.impl.AdminMenu.ShowMainAdminMenuCommand;
 import com.bartosso.bot.command.impl.CoordinatorMenu.ToHome.PutInBusThings.ShowListsOfSchoolsForEveningCommand;
 import com.bartosso.bot.command.impl.CoordinatorMenu.ToHome.ReadyToGoBuses.ShowReadyToGoBusesCommand;
@@ -72,7 +66,7 @@ public class CommandFactory {
             case SHOW_EMPLOYEE_COORDINATORS_MENU:
                 return new ShowEmployeeCoordinatorsMenuCommand();
             case SHOW_ALL_DRIVERS:
-                return new ShowAllDriversCommand();
+                return new SelectSchoolToShowDriversCommand();
             case ADD_NEW_DRIVER:
                 return new AddNewDriverCommand();
             case REMOVE_DRIVER:
@@ -139,6 +133,10 @@ public class CommandFactory {
                 return new ShowAllSkippedDaysCommand();
             case UPDATE_MANAGER:
                 return new AddManagerCommand();
+            case EDIT_REQUEST_CALL:
+                return new EditRequestCallCommand();
+            case SHOW_SCHOOLS_FOR_RENAME:
+                return new ShowSchoolsToRenameCommand();
             default:
                 throw new NotRealizedMethodException("Not realized for type: " + type);
         }

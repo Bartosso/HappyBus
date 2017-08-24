@@ -14,6 +14,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressWarnings("Duplicates")
 @RequiredArgsConstructor
 public class SelectBusCommand extends Command {
     private final long                      school_id;

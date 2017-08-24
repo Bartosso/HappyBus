@@ -63,14 +63,15 @@ public class DriverToSchoolCommand extends RouteCommand {
                 String lon = "L" + update.getMessage().getLocation().getLongitude();
                 busesDao.updateLastGpsCords(alt + lon,thisBus.getId());
                 kids.remove(0);
+
+                String messageText = " Ваш ребенок сел в утренний автобус. Мы направляемся в школу\n" + thisBus.toString()
+                        +"\nВодитель: " + thisDriver.toString();
+                sendMessageToParents(bot,messageText);
                 if (kids.isEmpty()) {
                     buttonKidsInSchool(bot);
                     return false;
                 }
                 actualKid = kids.get(0);
-                String messageText = " Ваш ребенок сел в утренний автобус. Мы направляемся в школу\n" + thisBus.toString()
-                         +"\nВодитель: " + thisDriver.toString();
-                sendMessageToParents(bot,messageText);
                 deleteMessages(bot);
                 showKidWithButtons(bot);
                 return false;

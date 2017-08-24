@@ -37,6 +37,7 @@ class SelectKidForPutInBus extends SelectKidCommand {
         }
         if (update.hasCallbackQuery()) {
             if (update.getCallbackQuery().getData().equals(buttonDao.getButtonText(10))) {
+                deleteMessages(bot);
                 return true;
             }
         }

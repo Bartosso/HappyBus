@@ -26,6 +26,10 @@ public class SchoolDao extends AbstractDao {
         else return a;
     }
 
+    public void renameSchool(long schoolId,String newName){
+        jdbcTemplate.update("UPDATE schools SET name =? WHERE id=?",newName,schoolId);
+    }
+
     public School getSchoolById(long id){
         return (School) jdbcTemplate.queryForObject("SELECT * FROM schools WHERE id=?", new Object[]{id} ,new SchoolMap());
     }

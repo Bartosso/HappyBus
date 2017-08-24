@@ -26,9 +26,14 @@ public abstract class AbstractAddEmployeeViaContactCommand extends Command {
                         sendMessageByIdWithKeyboard(bot,21,3);
                         return false;
                     }
+                    try{
                     addNewContactToDB(update.getMessage().getContact());
                     sendMessageByIdWithKeyboard(bot, 20,3);
-                    return false;
+                    return false;} catch (org.springframework.dao.DuplicateKeyException e){
+                        deleteMessages(bot);
+                        sendMessageByIdWithKeyboard(bot,83,3);
+                        return false;
+                    }
                 } else sendErrorMessageForFormat(bot);
                 return false;
             }

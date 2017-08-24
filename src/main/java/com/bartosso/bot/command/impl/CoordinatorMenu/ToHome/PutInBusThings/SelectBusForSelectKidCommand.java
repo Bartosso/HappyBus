@@ -17,11 +17,6 @@ public class SelectBusForSelectKidCommand extends SelectBusCommand {
 
     @Override
     public boolean execute(Update update, Bot bot) throws SQLException, TelegramApiException {
-//        if (update.hasCallbackQuery()) {
-//            if (update.getCallbackQuery().getData().equals(buttonDao.getButtonText(10))) {
-//                return true;
-//            }
-//        }
         return super.execute(update, bot);
     }
 

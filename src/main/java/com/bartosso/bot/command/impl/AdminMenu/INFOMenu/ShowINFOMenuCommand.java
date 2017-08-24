@@ -16,6 +16,7 @@ public class ShowINFOMenuCommand extends AbstractMenuCommand {
             map.put(buttonDao.getButtonText(36),34);
             map.put(buttonDao.getButtonText(38),35);
             map.put(buttonDao.getButtonText(55),51);
+            map.put(buttonDao.getButtonText(56),52);
         } catch (SQLException e) {
             e.printStackTrace();
         }

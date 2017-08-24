@@ -26,6 +26,7 @@ public class FindAndEditKidCommand extends Command{
     private boolean                         editingKid;
     private boolean                         editingParents;
     private boolean                         removingParent;
+    private boolean                         editingThingsInKid;
     private List <Entity>                   kids;
     private List <Parent>                   parents;
     private int                             page;
@@ -63,7 +64,7 @@ public class FindAndEditKidCommand extends Command{
             if (update.hasCallbackQuery()){
                 chose = update.getCallbackQuery().getData();
                 if (chose.equals("backOff")||chose.equals("back")){
-                    editingParents = true;
+                    editingParents = false;
                     deleteMessages(bot);
                     sendEditButtons(bot);
                     return false;
@@ -128,7 +129,13 @@ public class FindAndEditKidCommand extends Command{
         if (editingKid){
             if (update.hasCallbackQuery()){
                 chose = update.getCallbackQuery().getData();
-                if (chose.equals("back")){
+                if (chose.equals("back")||chose.equals("backOff")||chose.equals(buttonDao.getButtonText(10))){
+                    if (editingThingsInKid){
+                        editingThingsInKid = false;
+                        deleteMessages(bot);
+                        sendEditButtons(bot);
+                        return false;
+                    }
                     deleteMessages(bot);
                     editingKid = false;
                     sendMessageByIdWithKeyboard(bot,48,3);
@@ -136,14 +143,18 @@ public class FindAndEditKidCommand extends Command{
                     return false;
                 }
                 if (chose.equals("name")){
-                 sendMessageByIdWithKeyboard(bot,32,3);
+                    editingThingsInKid = true;
+                    deleteMessages(bot);
+                 sendMessageByIdWithKeyboard(bot,32,15);
                  return false;
                 }
                 if (chose.equals("photo")){
+                    deleteMessages(bot);
                     sendMessageByIdWithKeyboard(bot,34,6);
                     return false;
                 }
                 if (chose.equals("school_id")){
+                    editingThingsInKid = true;
                     showSchoolList(bot);
                     return false;
                 }
@@ -297,8 +308,13 @@ public class FindAndEditKidCommand extends Command{
         Kid kid = kidsDao.getKidById(childId);
         List<Parent> parents = factory.getParentDao().getParentsByChildId(childId);
         StringBuilder sb = new StringBuilder();
-        sb.append("Вы выбрали\n").append(kid.toString()).append("\nШкола: ").append(factory.getSchoolDao()
-                .getSchoolById(Long.parseLong(kid.getSchool_id())).getName()).append("\nРодители: ");
+        sb.append("Вы выбрали\n").append(kid.toString()).append("\nШкола: ");
+        try {
+            sb.append(factory.getSchoolDao().getSchoolById(Long.parseLong(kid.getSchool_id())).getName());
+        } catch (org.springframework.dao.EmptyResultDataAccessException e){
+            sb.append("Школа удалена, выберите новую в меню редактирования ученика.");
+        }
+        sb.append("\nРодители: ");
         parents.forEach(parent -> sb.append(parent.toString()));
         sb.append("\nВыберите что хотите изменить");
         editingKid = true;

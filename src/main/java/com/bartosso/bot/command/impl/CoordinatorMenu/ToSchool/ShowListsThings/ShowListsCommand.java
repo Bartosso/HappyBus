@@ -14,9 +14,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ShowListsCommand extends Command {
-    private int                             page = 0;
-    private ArrayList<InlineKeyboardMarkup> schoolPages;
-    private int                             messageWithKeyboardId;
+    protected int                             page = 0;
+    protected ArrayList<InlineKeyboardMarkup> schoolPages;
+    protected int                             messageWithKeyboardId;
     private boolean                         runningCommand;
     private Command                         selectBusCommand;
     @Override
@@ -65,7 +65,7 @@ public class ShowListsCommand extends Command {
             return false;
     }
 
-    private void showSchools(Bot bot) throws SQLException, TelegramApiException {
+    protected void showSchools(Bot bot) throws SQLException, TelegramApiException {
         List list = factory.getSchoolDao().getAllSchools();
         page = 0;
             deleteMessages(bot);

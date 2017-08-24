@@ -15,8 +15,8 @@ public class DriverDao extends AbstractDao implements EntityDao {
 
 
     public void addNew(Driver driver) {
-        jdbcTemplate.update("INSERT INTO drivers (id, name, phone, got_bus) VALUES (?,?,?,?)",
-                driver.getId(),driver.getName(),driver.getPhone(),false);
+        jdbcTemplate.update("INSERT INTO drivers (id, name, phone, got_bus,school_id) VALUES (?,?,?,?,?)",
+                driver.getId(),driver.getName(),driver.getPhone(),false, driver.getSchool_id());
     }
 
     public Driver getDriverByChatId(long chatId) {
@@ -28,6 +28,23 @@ public class DriverDao extends AbstractDao implements EntityDao {
         List<Driver> a = jdbcTemplate.query("SELECT * FROM drivers",new DriverMap());
         if (a.isEmpty()) return null;
         else return a;
+    }
+
+    public List getAllFromSchool(long school_id) {
+        List<Driver> a = jdbcTemplate.query("SELECT * FROM drivers WHERE school_id = ?",new Object[]{school_id},new DriverMap());
+        if (a.isEmpty()) return null;
+        else return a;
+    }
+
+
+    public List getAllDriversWithoutSchool() {
+        List<Driver> a = jdbcTemplate.query("SELECT * FROM drivers WHERE school_id ISNULL ",new DriverMap());
+        if (a.isEmpty()) return null;
+        else return a;
+    }
+
+    public void removeFromSchool(long school_id){
+        jdbcTemplate.update("UPDATE drivers SET school_id = NULL WHERE school_id=?",school_id);
     }
 
     public List getAllDriversWithoutBus() {
@@ -43,6 +60,11 @@ public class DriverDao extends AbstractDao implements EntityDao {
 
     public void setGotBus(boolean gotBus,long driverId){
         jdbcTemplate.update("UPDATE drivers SET got_bus=? WHERE  id=?", gotBus,driverId);
+    }
+
+
+    public void setNewSchool(long schoolId,long driverId){
+        jdbcTemplate.update("UPDATE drivers SET school_id=? WHERE  id=?", schoolId,driverId);
     }
 
     public void deleteDriver(Integer idToDelete){

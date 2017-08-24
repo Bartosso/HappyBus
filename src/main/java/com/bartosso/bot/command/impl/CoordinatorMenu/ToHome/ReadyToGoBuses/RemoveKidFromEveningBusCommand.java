@@ -2,6 +2,7 @@ package com.bartosso.bot.command.impl.CoordinatorMenu.ToHome.ReadyToGoBuses;
 
 import com.bartosso.bot.Bot;
 import com.bartosso.bot.command.impl.AdminMenu.AbstractShowAndRemoveCommand;
+import com.bartosso.bot.dao.impl.BusesDao;
 import com.bartosso.bot.entity.ProjectEntities.Entity;
 import lombok.RequiredArgsConstructor;
 import org.telegram.telegrambots.api.objects.Update;
@@ -18,6 +19,7 @@ public class RemoveKidFromEveningBusCommand extends AbstractShowAndRemoveCommand
     private final long         chatIdConstructor;
     private boolean            sendsKids;
     private List<Entity>       kidListInDaBus;
+    private BusesDao           busesDao           = factory.getBusesDao();
     @Override
     protected List<Entity> getEntitiesToShow() {
         //noinspection unchecked
@@ -37,7 +39,7 @@ public class RemoveKidFromEveningBusCommand extends AbstractShowAndRemoveCommand
     @Override
     protected void deleteEntityFromDb(int idToDelete) {
         kidListInDaBus.removeIf(entity -> entity.getId()==idToDelete);
-        factory.getBusesDao().updateEveningRoute(kidListInDaBus.stream().map(Entity::getId).collect(
+        busesDao.updateEveningRoute(kidListInDaBus.stream().map(Entity::getId).collect(
                 toList()).toArray(new Long[kidListInDaBus.size()]),busId);
     }
 

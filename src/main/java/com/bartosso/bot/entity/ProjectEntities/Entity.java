@@ -5,9 +5,5 @@ public interface Entity {
 
     long getId();
 
-    @Override
-    String toString();
-
-
 
 }

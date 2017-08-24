@@ -169,13 +169,41 @@ public class CustomKeyboardUtil {
                     sb.append(counter+1).append(". ").append(entityArrayList.get(counter).getTextToButton()).append("\n");
                     counter++;
                 }}
-                SendMessage sendMessage = new SendMessage(chatId,sb.toString());
-                row = getPagesSelector(pages.size(),pagesCount,b);
-                if (row!=null){
-                    rows = new ArrayList<>();
-                    rows.add(row);
-                    sendMessage.setReplyMarkup(new InlineKeyboardMarkup().setKeyboard(rows));
-                }
+            SendMessage sendMessage = new SendMessage(chatId,sb.toString());
+            row = getPagesSelector(pages.size(),pagesCount,b);
+            if (row!=null){
+                rows = new ArrayList<>();
+                rows.add(row);
+                sendMessage.setReplyMarkup(new InlineKeyboardMarkup().setKeyboard(rows));
+            }
+            pages.add(sendMessage);
+        }
+        return pages;
+
+    }
+
+    public static List<SendMessage> getEditDriverKeyboard(List<Entity> entityArrayList, long chatId){
+
+
+        ArrayList<SendMessage>  pages = new ArrayList<>();
+        List<InlineKeyboardButton>       row;
+        List<List<InlineKeyboardButton>> rows;
+        int pagesCount = 1 + (entityArrayList.size()/25);
+        int counter   = 0;
+        for (int b = 0; b < pagesCount; b++) {
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < 25; i++){
+                if (counter<entityArrayList.size()){
+                    sb.append(counter+1).append(". ").append(entityArrayList.get(counter).getTextToButton()).append("\n");
+                    counter++;
+                }}
+            SendMessage sendMessage = new SendMessage(chatId,sb.toString());
+            row = getPagesSelectorForEditDriver(pages.size(),pagesCount,b);
+            if (row!=null){
+                rows = new ArrayList<>();
+                rows.add(row);
+                sendMessage.setReplyMarkup(new InlineKeyboardMarkup().setKeyboard(rows));
+            }
             pages.add(sendMessage);
         }
         return pages;
@@ -206,7 +234,7 @@ public class CustomKeyboardUtil {
                  driverName = drivers.stream()
                          .filter(driver -> driver.getId()==bus.getDriver_id())
                          .collect(toList()).get(0).toString()+"\n\n";} catch
-                            (IndexOutOfBoundsException |NumberFormatException e){
+                            (IndexOutOfBoundsException |NullPointerException|NumberFormatException e){
                      driverName = "\n\n";
                  }
                  if (driverName.equals("\n\n")){
@@ -606,6 +634,36 @@ public class CustomKeyboardUtil {
         rows.add(row);
 
         return keyboard.setKeyboard(rows);
+    }
+
+    private static List<InlineKeyboardButton> getPagesSelectorForEditDriver(int pagesSize, int pagesCount, int pageNow ){
+
+        ArrayList<InlineKeyboardButton> row = new ArrayList<>();
+
+        if(pagesSize!=0){
+            InlineKeyboardButton buttonToPreviousPage = new InlineKeyboardButton();
+            buttonToPreviousPage.setText("Предыдущая страница");
+            buttonToPreviousPage.setCallbackData("previousPage");
+            row.add(buttonToPreviousPage);}
+
+        InlineKeyboardButton back = new InlineKeyboardButton();
+        back.setText("Назад");
+        back.setCallbackData("back");
+        row.add(back);
+
+        InlineKeyboardButton changeSchool = new InlineKeyboardButton();
+        changeSchool.setText("Прикрепить к другой школе");
+        changeSchool.setCallbackData("change");
+        row.add(changeSchool);
+
+
+        if(pagesCount>(pageNow+1)){
+            InlineKeyboardButton buttonToNextPage = new InlineKeyboardButton();
+            buttonToNextPage.setText("Следующая страница");
+            buttonToNextPage.setCallbackData("nextPage");
+            row.add(buttonToNextPage);
+        }
+        return row;
     }
 
     private static List<InlineKeyboardButton> getPagesSelector(int pagesSize, int pagesCount, int pageNow ){

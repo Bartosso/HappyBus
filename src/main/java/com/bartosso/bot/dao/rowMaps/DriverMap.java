@@ -13,6 +13,7 @@ public class DriverMap implements RowMapper {
                 resultSet.getLong(   "id"),
                 resultSet.getString( "name"),
                 resultSet.getString( "phone"),
-                resultSet.getBoolean("got_bus"));
+                resultSet.getBoolean("got_bus"),
+                resultSet.getLong("school_id"));
     }
 }

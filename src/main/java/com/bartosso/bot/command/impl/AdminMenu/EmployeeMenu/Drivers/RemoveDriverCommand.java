@@ -19,6 +19,7 @@ public class RemoveDriverCommand extends AbstractShowAndRemoveCommand {
     @Override
     protected void deleteEntityFromDb(int idToDelete) {
         factory.getDriverDao().deleteDriver(idToDelete);
+        factory.getBusesDao().removeDriverFromBuses(idToDelete);
     }
 
     @Override
