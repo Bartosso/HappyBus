@@ -85,11 +85,14 @@ public class FeedbackCommand extends Command {
          sendMessageByIdWithKeyboard(bot,13,6);
          return false;
          }
-         if (step == 2){
+         if (step == 2){try {
             bot.execute(new SendMessage(factory.getManagerDao().getManagerChatId(), "Сообщение от пользователя:\n" + text));
             if (document!=null){
             bot.sendDocument(new SendDocument().setDocument(document).setChatId(factory.getManagerDao().getManagerChatId()));}
-            sendMessageByIdWithKeyboard(bot,14, 3);
+            sendMessageByIdWithKeyboard(bot,14, 3);}
+            catch (org.springframework.dao.EmptyResultDataAccessException e){
+                sendMessageByIdWithKeyboard(bot,14, 3);
+            }
              expectNewValue      = false;
              step                = 0;
              text                = null;
