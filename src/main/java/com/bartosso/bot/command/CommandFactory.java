@@ -9,6 +9,7 @@ import com.bartosso.bot.command.impl.AdminMenu.EmployeeMenu.Coordinators.ShowEmp
 import com.bartosso.bot.command.impl.AdminMenu.EmployeeMenu.Drivers.*;
 import com.bartosso.bot.command.impl.AdminMenu.EmployeeMenu.ShowEmployeeMenuCommand;
 import com.bartosso.bot.command.impl.AdminMenu.INFOMenu.*;
+import com.bartosso.bot.command.impl.AdminMenu.MailingMenu.MailingCommand;
 import com.bartosso.bot.command.impl.AdminMenu.SchoolKidsMenu.*;
 import com.bartosso.bot.command.impl.AdminMenu.SchoolsMenu.*;
 import com.bartosso.bot.command.impl.AdminMenu.ShowMainAdminMenuCommand;
@@ -137,6 +138,8 @@ public class CommandFactory {
                 return new EditRequestCallCommand();
             case SHOW_SCHOOLS_FOR_RENAME:
                 return new ShowSchoolsToRenameCommand();
+            case MAILING:
+                return new MailingCommand();
             default:
                 throw new NotRealizedMethodException("Not realized for type: " + type);
         }

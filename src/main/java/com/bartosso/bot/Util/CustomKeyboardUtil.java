@@ -666,6 +666,31 @@ public class CustomKeyboardUtil {
         return row;
     }
 
+    private static List<InlineKeyboardButton> getPagesSelectorForMailing(int pagesSize, int pagesCount, int pageNow ){
+
+        ArrayList<InlineKeyboardButton> row = new ArrayList<>();
+
+        if(pagesSize!=0){
+            InlineKeyboardButton buttonToPreviousPage = new InlineKeyboardButton();
+            buttonToPreviousPage.setText("Предыдущая страница");
+            buttonToPreviousPage.setCallbackData("previousPage");
+            row.add(buttonToPreviousPage);}
+
+        InlineKeyboardButton back = new InlineKeyboardButton();
+        back.setText("Назад");
+        back.setCallbackData("backOff");
+        row.add(back);
+
+
+        if(pagesCount>(pageNow+1)){
+            InlineKeyboardButton buttonToNextPage = new InlineKeyboardButton();
+            buttonToNextPage.setText("Следующая страница");
+            buttonToNextPage.setCallbackData("nextPage");
+            row.add(buttonToNextPage);
+        }
+
+        return row;
+    }
     private static List<InlineKeyboardButton> getPagesSelector(int pagesSize, int pagesCount, int pageNow ){
 
         ArrayList<InlineKeyboardButton> row = new ArrayList<>();
@@ -715,6 +740,43 @@ public class CustomKeyboardUtil {
 
         rowsList.add(keyboardRow);
         return keyboardMarkup.setKeyboard(rowsList);
+    }
+
+
+    public static ArrayList<InlineKeyboardMarkup> getPagesForMailing(List<Entity> entityArrayList, String
+            callBackPrefix){
+        ArrayList<InlineKeyboardMarkup>  keyboards = new ArrayList<>();
+        List<InlineKeyboardButton>       row;
+        List<List<InlineKeyboardButton>> rows;
+        int pagesCount = 1 + (entityArrayList.size()/25);
+        int counter   = 0;
+        for (int b = 0; b < pagesCount; b++) {
+            InlineKeyboardMarkup keyboard = new InlineKeyboardMarkup();
+            rows = new ArrayList<>();
+            for (int i = 0; i < 25; i++){
+                if (counter<entityArrayList.size()){
+                    row                             = new ArrayList<>();
+                    InlineKeyboardButton bookButton = new InlineKeyboardButton();
+                    bookButton.setText(entityArrayList.get(counter).getTextToButton());
+                    bookButton.setCallbackData(callBackPrefix + ":" + entityArrayList.get(counter).getId());
+                    row.add(bookButton);
+                    rows.add(row);
+                    counter++;
+                }}
+            row = getPagesSelectorForMailing(keyboards.size(),pagesCount,b);
+            rows.add(row);
+            row = new ArrayList<>();
+            InlineKeyboardButton ready = new InlineKeyboardButton();
+            ready.setText("Отправить рассылку");
+            ready.setCallbackData("ready");
+            row.add(ready);
+            rows.add(row);
+
+            keyboard.setKeyboard(rows);
+            keyboards.add(keyboard);
+
+        }
+        return keyboards;
     }
 
     public static ReplyKeyboardMarkup getKeyboardForEveningRoute(){

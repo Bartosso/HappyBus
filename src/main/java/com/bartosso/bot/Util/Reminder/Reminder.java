@@ -1,9 +1,6 @@
 package com.bartosso.bot.Util.Reminder;
 
-import com.bartosso.bot.Bot;
 import lombok.extern.slf4j.Slf4j;
-
-
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -23,7 +20,7 @@ public class Reminder {
     void setCheckEveryNightDb(LocalDateTime lDT) {
         log.info("Next check db task set to " + lDT.toString());
 
-        CheckEveryNightKidsToSkipSchool checkEveryNightDbTask = new CheckEveryNightKidsToSkipSchool(this);
+        CheckEveryNightDB checkEveryNightDbTask = new CheckEveryNightDB(this);
         timer.schedule(checkEveryNightDbTask, Date.from(lDT.atZone(ZoneId.systemDefault()).toInstant()));
     }
 }

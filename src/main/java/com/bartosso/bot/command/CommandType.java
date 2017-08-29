@@ -56,7 +56,8 @@ public enum CommandType {
     SHOW_ARCHIVE_SICK_LEAVES(50),
     UPDATE_MANAGER(51),
     EDIT_REQUEST_CALL(52),
-    SHOW_SCHOOLS_FOR_RENAME(53);
+    SHOW_SCHOOLS_FOR_RENAME(53),
+    MAILING(54);
 
 
     private final int id;

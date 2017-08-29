@@ -41,6 +41,22 @@ public class ParentDao extends AbstractDao {
         else return a;
     }
 
+    public List<Parent> getAllParents(){
+        @SuppressWarnings("unchecked")
+        List<Parent> a = jdbcTemplate.query("SELECT * FROM parents",new ParentMap());
+        if (a.isEmpty()) return null;
+        else return a;
+    }
+
+    public List<Parent> getAllParentsFromSchool(long schoolId){
+        @SuppressWarnings("unchecked")
+        List<Parent> a = jdbcTemplate.query
+                ("SELECT * FROM parents WHERE child_id = ANY (SELECT kids.id FROM kids WHERE school_id::INTEGER=?)",
+                        new Object[]{schoolId}, new ParentMap());
+        if (a.isEmpty()) return null;
+        else return a;
+    }
+
     public void addNew(Parent parent){
         jdbcTemplate.update("INSERT INTO parents (id, first_name, last_name, username, phone, child_id) VALUES " +
                 "(?,?,?,?,?,?)",parent.getId(),  parent.getFirstName(), parent.getLastName(),

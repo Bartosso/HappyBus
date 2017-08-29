@@ -25,6 +25,7 @@ public class ShowMainAdminMenuCommand extends AbstractMenuCommand {
             map.put(buttonDao.getButtonText(19),13);
             map.put(buttonDao.getButtonText(20),14);
             map.put(buttonDao.getButtonText(21),15);
+            map.put(buttonDao.getButtonText(58),54);
         } catch (SQLException e) {
             e.printStackTrace();
         }
