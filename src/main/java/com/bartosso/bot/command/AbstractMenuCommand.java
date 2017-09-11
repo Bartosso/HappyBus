@@ -56,11 +56,12 @@ public abstract class AbstractMenuCommand extends Command {
     }
 
     private boolean selectMenu(Command command,Update update, Bot bot) throws SQLException, TelegramApiException {
-        deleteMessages(bot);
         if (command.execute(update, bot)){
+            deleteMessages(bot);
             showMenu(bot,update);
             return false;
         } else {
+            deleteMessages(bot);
             runningCommand = true;
             return false; }
     }
