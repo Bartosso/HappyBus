@@ -1,11 +1,17 @@
 package com.bartosso.bot.command.impl.AdminMenu.BusesMenu;
 
+import com.bartosso.bot.Bot;
 import com.bartosso.bot.command.AbstractMenuCommand;
+import com.bartosso.bot.command.Command;
+import com.bartosso.bot.command.impl.ParentsMenu.ShowMainMenuCommand;
+import org.telegram.telegrambots.api.objects.Update;
+import org.telegram.telegrambots.exceptions.TelegramApiException;
 
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
+@SuppressWarnings("Duplicates")
 public class ShowBusesMenuCommand extends AbstractMenuCommand {
 
     @Override
@@ -22,6 +28,21 @@ public class ShowBusesMenuCommand extends AbstractMenuCommand {
             e.printStackTrace();
         }
         return map;
+    }
+
+    @Override
+    public boolean execute(Update update, Bot bot) throws SQLException, TelegramApiException {
+        if (update.hasMessage()) {
+            chatId = update.getMessage().getChatId();
+            if (update.getMessage().hasText() && update.getMessage().getText().equals(buttonDao.getButtonText(22))) {
+                deleteMessages(bot);
+                Command command = new ShowMainMenuCommand();
+                bot.getConversation(chatId)
+                        .setCommand(command);
+                return command.execute(update, bot);
+            }
+        }
+        return super.execute(update, bot);
     }
 
     @Override

@@ -5,10 +5,7 @@ import com.bartosso.bot.Util.CustomKeyboardUtil;
 import com.bartosso.bot.command.Command;
 import com.bartosso.bot.dao.impl.BusesDao;
 import com.bartosso.bot.dao.impl.ParentDao;
-import com.bartosso.bot.entity.ProjectEntities.Bus;
-import com.bartosso.bot.entity.ProjectEntities.Kid;
-import com.bartosso.bot.entity.ProjectEntities.Parent;
-import com.bartosso.bot.entity.ProjectEntities.SickLeave;
+import com.bartosso.bot.entity.ProjectEntities.*;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.methods.updatingmessages.DeleteMessage;
 import org.telegram.telegrambots.api.methods.updatingmessages.EditMessageText;
@@ -119,9 +116,18 @@ public class SelectDayToSkipCommand extends Command {
                     .map(Parent::toString).collect(Collectors.joining());
         }
         SendMessage sendMessage = new SendMessage().setText(textToManagerUndDriver);
+        //noinspection unchecked
+        List<Coordinator> coordinators = factory.getCoordinatorDao().getAllCoordinators();
         try {
             bot.execute(sendMessage.setChatId(thisBus.getDriver_id()));
             bot.execute(sendMessage.setChatId(factory.getManagerDao().getManagerChatId()));
+            coordinators.forEach(coordinator -> {
+                try {
+                    bot.execute(sendMessage.setChatId(chatId));
+                } catch (TelegramApiException e) {
+                    e.printStackTrace();
+                }
+            });
         } catch (TelegramApiException ignored) {
         }
     }

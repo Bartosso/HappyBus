@@ -29,6 +29,13 @@ public class ShowCoordinatorMenuCommand extends AbstractMenuCommand {
     public boolean execute(Update update, Bot bot) throws SQLException, TelegramApiException {
         if (update.hasMessage()) {
             chatId = update.getMessage().getChatId();
+            if (update.getMessage().hasText() && update.getMessage().getText().equals(buttonDao.getButtonText(22))) {
+                deleteMessages(bot);
+                Command command = new ShowMainMenuCommand();
+                bot.getConversation(chatId)
+                        .setCommand(command);
+                return command.execute(update, bot);
+            }
         }
         if (!factory.getCoordinatorDao().isCoordinator(chatId)){
             Command command = new ShowMainMenuCommand();

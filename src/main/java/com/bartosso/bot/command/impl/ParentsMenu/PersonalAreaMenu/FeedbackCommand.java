@@ -6,6 +6,7 @@ import org.telegram.telegrambots.api.methods.send.SendDocument;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.methods.updatingmessages.DeleteMessage;
 import org.telegram.telegrambots.api.objects.Update;
+import org.telegram.telegrambots.api.objects.User;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
 
 import java.sql.SQLException;
@@ -16,6 +17,7 @@ public class FeedbackCommand extends Command {
     private int                step;
     private String             text;
     private String             document;
+    private User               user;
     @Override
     public boolean execute(Update update, Bot bot) throws SQLException, TelegramApiException {
         if (update.hasMessage()){
@@ -69,7 +71,8 @@ public class FeedbackCommand extends Command {
 
         }
          if (update.hasMessage()){
-             chatId = update.getMessage().getChatId();
+             user   = update.getMessage().getFrom();
+             chatId = user.getId();
              if (!factory.getParentDao().isRegistred(chatId)) {
                  sendMessageByIdWithKeyboard(bot,68,3);
                  return false;
@@ -86,7 +89,7 @@ public class FeedbackCommand extends Command {
          return false;
          }
          if (step == 2){try {
-            bot.execute(new SendMessage(factory.getManagerDao().getManagerChatId(), "Сообщение от пользователя:\n" + text));
+            bot.execute(new SendMessage(factory.getManagerDao().getManagerChatId(), getMessageText(text)));
             if (document!=null){
             bot.sendDocument(new SendDocument().setDocument(document).setChatId(factory.getManagerDao().getManagerChatId()));}
             sendMessageByIdWithKeyboard(bot,14, 3);}
@@ -101,6 +104,20 @@ public class FeedbackCommand extends Command {
          }
 
             return false;
+    }
+
+    private String getMessageText(String text){
+        StringBuilder sb = new StringBuilder();
+        sb.append("Сообщение от пользователя: ").append(user.getFirstName());
+        if (user.getLastName() != null){
+            sb.append(" ").append(user.getFirstName());
+        }
+        if (user.getUserName() != null){
+            sb.append(" @").append(user.getLastName());
+        }
+        sb.append("\n").append(parentDao.getParentByChatId(chatId).getPhone());
+        sb.append("\n").append(text);
+        return sb.toString();
     }
 
 }
